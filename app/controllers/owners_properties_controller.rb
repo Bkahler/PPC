@@ -1,0 +1,2 @@
+class OwnersPropertiesController < ApplicationController
+end
