@@ -11,7 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503195514) do
+ActiveRecord::Schema.define(version: 20140503200612) do
+
+  create_table "owner_properties", force: true do |t|
+    t.integer  "property_id"
+    t.integer  "owner_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "owners", force: true do |t|
+    t.string   "name"
+    t.string   "doc"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "alternate_phone"
+    t.string   "email"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "properties", force: true do |t|
+    t.string   "apn"
+    t.float    "acres"
+    t.float    "GIS_acres"
+    t.float    "build_acres"
+    t.integer  "year_sold"
+    t.float    "sale_price"
+    t.float    "assesment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
