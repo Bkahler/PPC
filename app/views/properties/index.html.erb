@@ -14,9 +14,30 @@
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
-<% @properties.each do |property| %>
-  <%= property.apn %>
-  <%= property.owners[0].name %> <br >
-  <%= link_to 'edit' , property_path(property.id)%>
-<% end %>
-<%=Rails.configuration.database_configuration[Rails.env]%>
+<table>
+  <tr>
+    <th><%= sort_link @search, :apn ,"APN"%></th>
+    <th><%= sort_link @search, :owners,"Primary Owner" %></th>
+    <th><%= sort_link @search,:acres,"Acres"%></th>
+    <th><%= sort_link @search,:GIS_acres,"GIS Acres"%></th>
+    <th><%= sort_link @search,:build_Acres,"Build Acres"%></th>
+    <th><%= sort_link @search,:year_sold,"Year Sold"%></th>
+    <th><%= sort_link @search,:sale_price,"Sale Price"%></th>
+    <th><%= sort_link @search,:assesment ,"Assesment"%></th>
+
+  </tr>
+  <% @properties.each do |property| %>
+  <tr>
+    <td><%= property.apn %></td>
+    <td><%=property.owners[0].name%></td>
+    <td><%= property.acres %></td>
+    <td><%= property.GIS_acres %></td>
+    <td><%= property.build_acres %></td>
+    <td><%= property.year_sold %></td>
+    <td><%= property.sale_price %></td>
+    <td><%= property.assesment %></td>
+
+    <td><%= link_to 'edit' , property_path(property.id)%></td>
+  </tr>
+  <% end %>
+</table>
