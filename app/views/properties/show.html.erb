@@ -1,0 +1,9 @@
+<div>
+<%= @property.apn%>
+<%= form_for @property do |f|%>
+  <%= f.label :apn %>:
+  <%= f.text_field :apn %> <br />
+  <%= f.label :owner %>
+  <%= select_tag "owner", options_from_collection_for_select(@property.owners, "id", "name")%>
+<% end %>
+</div>

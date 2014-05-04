@@ -17,4 +17,6 @@
 <% @properties.each do |property| %>
   <%= property.apn %>
   <%= property.owners[0].name %> <br >
+  <%= link_to 'edit' , property_path(property.id)%>
 <% end %>
+<%=Rails.configuration.database_configuration[Rails.env]%>

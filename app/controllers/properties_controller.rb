@@ -6,4 +6,8 @@ class PropertiesController < ApplicationController
     @search.build_condition
   end
 
+  def show
+    @property = Property.find(params[:id])
+  end
+
 end
