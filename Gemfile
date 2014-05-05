@@ -36,6 +36,7 @@ group :doc do
 end
 
 gem 'ransack'
+gem 'mapbox-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -1,19 +1,28 @@
-<div>
-  <h3> APN </h3>
-  <p> <%= @property.apn %></p>
-  <h3> Acres </h3>
-  <p> <%= @property.acres %></p>
-  <h3> GIS Acres </h3>
-  <p> <%= @property.GIS_acres %></p>
-  <h3> Build Acres </h3>
-  <p> <%= @property.build_acres %></p>
-  <h3> Year Sold </h3>
-  <p> <%= @property.year_sold %></p>
-  <h3> Sale Price </h3>
-  <p> <%= @property.sale_price %></p>
-  <h3> Assesment </h3>
-  <p> <%= @property.assesment %></p>
+<div class ='row'>
+  <div class="col-md-7">
+    <h3> APN </h3>
+    <p> <%= @property.apn %></p>
+    <h3> Acres </h3>
+    <p> <%= @property.acres %></p>
+    <h3> GIS Acres </h3>
+    <p> <%= @property.GIS_acres %></p>
+    <h3> Build Acres </h3>
+    <p> <%= @property.build_acres %></p>
+    <h3> Year Sold </h3>
+    <p> <%= @property.year_sold %></p>
+    <h3> Sale Price </h3>
+    <p> <%= @property.sale_price %></p>
+    <h3> Assesment </h3>
+    <p> <%= @property.assesment %></p>
 
-  <%= link_to "Update", edit_property_path(@property)%>
+    <%= link_to "Update", edit_property_path(@property)%>
+
+  </div>
+
+  <div id='map' class='dark col-md-5'></div>
 
 </div>
+  <script type='text/javascript'>
+    var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.9, -77], 5);
+  </script>
+
