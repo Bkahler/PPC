@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem "therubyracer"
 gem "less-rails"
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
