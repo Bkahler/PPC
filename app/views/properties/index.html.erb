@@ -1,20 +1,20 @@
 <h1> Property tables will go here </h1>
-<%= search_form_for @search do |f| %>
+<%= search_form_for @search, :html=>{:class=>'form-inline'} do |f| %>
   <%= f.condition_fields do |c| %>
-    <div class="field">
+    <div class="field form-group">
       <%= c.attribute_fields do |a| %>
-        <%= a.attribute_select associations: [:owners] %>
+        <%= a.attribute_select associations: [:owners], :class=>'form-control'%>
       <% end %>
-      <%= c.predicate_select only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null] %>
+      <%= c.predicate_select ({only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null]})%>
       <%= c.value_fields do |v| %>
-        <%=v.text_field :value %>
+        <%=v.text_field :value, :class=>'form-control' %>
       <% end %>
     </div>
   <% end %>
-  <div class="actions"><%= f.submit "Search" %></div>
+  <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-default'%></div>
 <% end %>
 
-<table>
+<table class="table">
   <tr>
     <th><%= sort_link @search, :apn ,"APN"%></th>
     <th><%= sort_link @search, :owners,"Primary Owner" %></th>
