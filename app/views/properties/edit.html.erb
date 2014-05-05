@@ -1,0 +1,25 @@
+<div>
+
+<%= @property.apn%>
+<%= form_for @property do |f|%>
+  <%= f.label :apn %>:
+  <%= f.text_field :apn %> <br />
+  <%= f.label :owner %>
+  <%= select_tag "owner", options_from_collection_for_select(@property.owners, "id", "name")%><br>
+  <%= f.label :acres %>:
+  <%= f.text_field :acres %> <br />
+  <%= f.label :GIS_acres,"GIS Acres" %>:
+  <%= f.text_field :GIS_acres %> <br />
+  <%= f.label :build_acres,"Build Acres" %>:
+  <%= f.text_field :build_acres %> <br />
+  <%= f.label :year_sold,"Year Sold" %>:
+  <%= f.text_field :year_sold %> <br />
+  <%= f.label :sale_price,"Sale Price" %>:
+  <%= f.text_field :sale_price %> <br />
+  <%= f.label :assesment,"Assesment" %>:
+  <%= f.text_field :assesment %> <br />
+  <%= f.submit%>
+
+<% end %>
+
+</div>
