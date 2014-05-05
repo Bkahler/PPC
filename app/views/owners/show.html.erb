@@ -1,0 +1,25 @@
+<div class ='row'>
+  <div class="col-md-7">
+    <h3> NAME</h3>
+    <p> <%= @owner.name %></p>
+    <h3> DOC </h3>
+    <p> <%= @owner.doc %></p>
+    <h3> Address </h3>
+    <p> <%= @owner.street %></p>
+    <p> <%= @owner.city %></p>
+    <p> <%= @owner.state %></p>
+    <h3> Contact</h3>
+    <p> Phone Number : <%= @owner.phone%></p>
+    <p> Alt Phone: <%= @owner.alternate_phone%></p>
+    <p> Email: <%= @owner.email%></p>
+    <h3>Notes</h3>
+    <p> <%= @owner.notes%></p>
+
+
+    <%= link_to "Update", edit_owner_path(@owner)%>
+
+  </div>
+
+
+</div>
+

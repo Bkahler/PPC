@@ -1,0 +1,28 @@
+<div>
+
+<h2><%= @owner.name%></h2>
+<%= form_for @owner do |f|%>
+  <%= f.label :name %>:
+  <%= f.text_field :name %> <br />
+  <%= f.label :street %>:
+  <%= f.text_field :street %> <br />
+  <%= f.label :city,"City" %>:
+  <%= f.text_field :city %> <br />
+  <%= f.label :state,"State" %>:
+  <%= f.text_field :state %> <br />
+  <%= f.label :country,"Country" %>:
+  <%= f.text_field :country %> <br />
+  <%= f.label :phone,"Primary Phone" %>:
+  <%= f.text_field :phone%> <br />
+  <%= f.label :alternate_phone,"Alt Phone" %>:
+  <%= f.text_field :alternate_phone %> <br />
+  <%= f.label :email,"Email" %>:
+  <%= f.text_field :email %> <br />
+  <%= f.label :notes, "Notes" %>
+  <%= f.text_area :notes %> <br />
+
+  <%= f.submit%>
+
+<% end %>
+
+</div>
