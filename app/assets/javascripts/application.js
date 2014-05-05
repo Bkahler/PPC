@@ -13,6 +13,6 @@
 //= require jquery
 //= require mapbox.js
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
