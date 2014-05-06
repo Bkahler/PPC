@@ -1,5 +1,5 @@
-<h1> OWNERS tables will go here </h1>
-<%= search_form_for @search, :html=>{:class=>'form-inline'} do |f| %>
+<h1>PROPERTY OWNERS</h1>
+<%= search_form_for @search, :html=>{:class=>'form-inline owner-search'} do |f| %>
   <%= f.condition_fields do |c| %>
     <div class="field form-group">
       <%= c.attribute_fields do |a| %>
@@ -11,37 +11,36 @@
       <% end %>
     </div>
   <% end %>
-  <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-default'%></div>
+  <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-primary'%></div>
 <% end %>
+<div id='test'>
+  <table class="table owner-table">
+    <tr>
+      <th><%= sort_link @search, :name ,"Name"%></th>
+      <th><%= sort_link @search, :doc,"Doc" %></th>
+      <th><%= sort_link @search, :street,"Street"%></th>
+      <th><%= sort_link @search, :city,"City"%></th>
+      <th><%= sort_link @search, :state,"State"%></th>
+      <th><%= sort_link @search, :country,"Country"%></th>
+      <th><%= sort_link @search, :phone,"Phone"%></th>
+      <th><%= sort_link @search, :alternate_phone,"Alt Phone"%></th>
+      <th><%= sort_link @search, :email ,"Email"%></th>
+      <th><%= sort_link @search, :notes,"Notes"%></th>
 
-<table class="table">
-  <tr>
-    <th><%= sort_link @search, :name ,"Name"%></th>
-    <th><%= sort_link @search, :doc,"Doc" %></th>
-    <th><%= sort_link @search, :street,"Street"%></th>
-    <th><%= sort_link @search, :city,"City"%></th>
-    <th><%= sort_link @search, :state,"State"%></th>
-    <th><%= sort_link @search, :country,"Country"%></th>
-    <th><%= sort_link @search, :phone,"Phone"%></th>
-    <th><%= sort_link @search, :alternate_phone,"Alternate Phone"%></th>
-    <th><%= sort_link @search, :email ,"Email"%></th>
-    <th><%= sort_link @search, :notes,"Notes"%></th>
-
-  </tr>
-  <% @owners.each do |owner| %>
-  <tr>
-    <td><%= owner.name %></td>
-    <td><%= owner.doc %></td>
-    <td><%= owner.street %></td>
-    <td><%= owner.city %></td>
-    <td><%= owner.state %></td>
-    <td><%= owner.country %></td>
-    <td><%= owner.phone %></td>
-    <td><%= owner.alternate_phone%></td>
-    <td><%= owner.email%></td>
-    <td><%= owner.notes%></td>
-
-    <td><%= link_to 'view' , owner_path(owner.id)%></td>
-  </tr>
-  <% end %>
-</table>
+    </tr>
+    <% @owners.each do |owner| %>
+    <tr>
+      <td><%= link_to owner.name , owner_path(owner.id)%></td>
+      <td><%= owner.doc %></td>
+      <td><%= owner.street %></td>
+      <td><%= owner.city %></td>
+      <td><%= owner.state %></td>
+      <td><%= owner.country %></td>
+      <td><%= owner.phone %></td>
+      <td><%= owner.alternate_phone%></td>
+      <td><%= owner.email%></td>
+      <td><%= owner.notes%></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

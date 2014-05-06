@@ -1,5 +1,5 @@
-<h1> Property tables will go here </h1>
-<%= search_form_for @search, :html=>{:class=>'form-inline'} do |f| %>
+<h1> PROPERTY </h1>
+<%= search_form_for @search, :html=>{:class=>'form-inline property-search'} do |f| %>
   <%= f.condition_fields do |c| %>
     <div class="field form-group">
       <%= c.attribute_fields do |a| %>
@@ -11,33 +11,33 @@
       <% end %>
     </div>
   <% end %>
-  <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-default'%></div>
+  <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-primary'%></div>
 <% end %>
+<div id="test">
+  <table class="table prop-table">
+    <tr>
+      <th><%= sort_link @search, :apn ,"APN"%></th>
+      <th><%= sort_link @search, :owners,"Primary Owner" %></th>
+      <th><%= sort_link @search,:acres,"Acres"%></th>
+      <th><%= sort_link @search,:GIS_acres,"GIS Acres"%></th>
+      <th><%= sort_link @search,:build_Acres,"Build Acres"%></th>
+      <th><%= sort_link @search,:year_sold,"Year Sold"%></th>
+      <th><%= sort_link @search,:sale_price,"Sale Price"%></th>
+      <th><%= sort_link @search,:assesment ,"Assesment"%></th>
 
-<table class="table">
-  <tr>
-    <th><%= sort_link @search, :apn ,"APN"%></th>
-    <th><%= sort_link @search, :owners,"Primary Owner" %></th>
-    <th><%= sort_link @search,:acres,"Acres"%></th>
-    <th><%= sort_link @search,:GIS_acres,"GIS Acres"%></th>
-    <th><%= sort_link @search,:build_Acres,"Build Acres"%></th>
-    <th><%= sort_link @search,:year_sold,"Year Sold"%></th>
-    <th><%= sort_link @search,:sale_price,"Sale Price"%></th>
-    <th><%= sort_link @search,:assesment ,"Assesment"%></th>
+    </tr>
+    <% @properties.each do |property| %>
+    <tr>
+      <td><%= link_to property.apn , property_path(property.id)%></td>
+      <td><%=property.owners[0].name%></td>
+      <td><%= property.acres %></td>
+      <td><%= property.GIS_acres %></td>
+      <td><%= property.build_acres %></td>
+      <td><%= property.year_sold %></td>
+      <td><%= property.sale_price %></td>
+      <td><%= property.assesment %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
 
-  </tr>
-  <% @properties.each do |property| %>
-  <tr>
-    <td><%= property.apn %></td>
-    <td><%=property.owners[0].name%></td>
-    <td><%= property.acres %></td>
-    <td><%= property.GIS_acres %></td>
-    <td><%= property.build_acres %></td>
-    <td><%= property.year_sold %></td>
-    <td><%= property.sale_price %></td>
-    <td><%= property.assesment %></td>
-
-    <td><%= link_to 'view' , property_path(property.id)%></td>
-  </tr>
-  <% end %>
-</table>

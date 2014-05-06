@@ -1,5 +1,5 @@
 <div class ='row'>
-  <div class="col-md-7">
+  <div class="col-md-6">
     <h3> NAME</h3>
     <p> <%= @owner.name %></p>
     <h3> DOC </h3>
@@ -14,10 +14,13 @@
     <p> Email: <%= @owner.email%></p>
     <h3>Notes</h3>
     <p> <%= @owner.notes%></p>
-
-
     <%= link_to "Update", edit_owner_path(@owner)%>
-
+  </div>
+  <div class="col-md-6 owned">
+    <h2>Properties Owned </h2>
+    <% @owner.properties.each do |property| %>
+      <h4>APN: <%= property.apn%></h4>
+    <%end%>
   </div>
 
 

@@ -1,4 +1,48 @@
+table { table-layout: fixed; }
+th, td { width: 150px; }
+
+.owned{
+  background: grey;
+  padding: 5px 10px 25px 20px;
+}
+
 #map{
     height: 400px;
   }
+
+#test{
+  height: 300px;
+  overflow: auto;
+}
+
+.property-search{
+  margin-bottom: 40px;
+}
+
+.owner-search{
+  margin-bottom: 40px;
+}
+
+#q_c_0_p{
+  height:33px;
+}
+
+#q_c_0_a_0_name{
+  height: 33px;
+}
+
+div.actions.form-control{
+  border: 0px;
+  padding: 0px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 1px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
 

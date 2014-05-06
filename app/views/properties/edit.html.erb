@@ -1,24 +1,24 @@
-<div>
+<div class="col-md-5">
 
-<%= @property.apn%>
+<h2> Edit Attributes for APN: <%= @property.apn%></h2>
 <%= form_for @property do |f|%>
   <%= f.label :apn %>:
-  <%= f.text_field :apn %> <br />
+  <%= f.text_field :apn,:class=>'form-control' %> <br />
   <%= f.label :owner %>
-  <%= select_tag "owner", options_from_collection_for_select(@property.owners, "id", "name")%><br>
+  <%= select_tag "owner", options_from_collection_for_select(@property.owners, "id", "name"),:class=>'form-control'%><br>
   <%= f.label :acres %>:
-  <%= f.text_field :acres %> <br />
+  <%= f.text_field :acres ,:class=>'form-control'%> <br />
   <%= f.label :GIS_acres,"GIS Acres" %>:
-  <%= f.text_field :GIS_acres %> <br />
+  <%= f.text_field :GIS_acres,:class=>'form-control' %> <br />
   <%= f.label :build_acres,"Build Acres" %>:
-  <%= f.text_field :build_acres %> <br />
+  <%= f.text_field :build_acres,:class=>'form-control' %> <br />
   <%= f.label :year_sold,"Year Sold" %>:
-  <%= f.text_field :year_sold %> <br />
+  <%= f.text_field :year_sold ,:class=>'form-control'%> <br />
   <%= f.label :sale_price,"Sale Price" %>:
-  <%= f.text_field :sale_price %> <br />
+  <%= f.text_field :sale_price ,:class=>'form-control'%> <br />
   <%= f.label :assesment,"Assesment" %>:
-  <%= f.text_field :assesment %> <br />
-  <%= f.submit%>
+  <%= f.text_field :assesment,:class=>'form-control' %> <br />
+  <%= f.submit "Update",:class=>'form-control btn-danger'%>
 
 <% end %>
 

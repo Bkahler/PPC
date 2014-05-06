@@ -1,27 +1,26 @@
-<div>
-
+<div class="col-md-6">
 <h2><%= @owner.name%></h2>
 <%= form_for @owner do |f|%>
   <%= f.label :name %>:
-  <%= f.text_field :name %> <br />
+  <%= f.text_field :name,:class=>'form-control' %> <br />
   <%= f.label :street %>:
-  <%= f.text_field :street %> <br />
+  <%= f.text_field :street,:class=>'form-control' %> <br />
   <%= f.label :city,"City" %>:
-  <%= f.text_field :city %> <br />
+  <%= f.text_field :city ,:class=>'form-control'%> <br />
   <%= f.label :state,"State" %>:
-  <%= f.text_field :state %> <br />
+  <%= f.text_field :state ,:class=>'form-control'%> <br />
   <%= f.label :country,"Country" %>:
-  <%= f.text_field :country %> <br />
+  <%= f.text_field :country ,:class=>'form-control'%> <br />
   <%= f.label :phone,"Primary Phone" %>:
-  <%= f.text_field :phone%> <br />
+  <%= f.text_field :phone,:class=>'form-control'%> <br />
   <%= f.label :alternate_phone,"Alt Phone" %>:
-  <%= f.text_field :alternate_phone %> <br />
+  <%= f.text_field :alternate_phone ,:class=>'form-control'%> <br />
   <%= f.label :email,"Email" %>:
-  <%= f.text_field :email %> <br />
+  <%= f.text_field :email ,:class=>'form-control'%> <br />
   <%= f.label :notes, "Notes" %>
-  <%= f.text_area :notes %> <br />
+  <%= f.text_area :notes ,:class=>'form-control'%> <br />
 
-  <%= f.submit%>
+  <%= f.submit "Update",:class=>'form-control btn-danger'%>
 
 <% end %>
 
