@@ -3,9 +3,9 @@
   <%= f.condition_fields do |c| %>
     <div class="field form-group">
       <%= c.attribute_fields do |a| %>
-        <%= a.attribute_select associations: [:property], :class=>'form-control'%>
+        <%= a.attribute_select({associations: [:property]},{class: "form-control"})%>
       <% end %>
-      <%= c.predicate_select ({only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null]})%>
+      <%= c.predicate_select({only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null]},{class: "form-control"})%>
       <%= c.value_fields do |v| %>
         <%=v.text_field :value, :class=>'form-control' %>
       <% end %>
