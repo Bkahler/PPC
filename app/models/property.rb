@@ -18,5 +18,11 @@ class Property < ActiveRecord::Base
     end
   end
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Property.create! row.to_hash
+    end
+  end
+
 
 end

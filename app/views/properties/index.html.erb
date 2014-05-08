@@ -30,7 +30,11 @@
     <% @properties.each do |property| %>
     <tr>
       <td><%= link_to property.apn , property_path(property.id)%></td>
-      <td><%=property.owners[0].name%></td>
+      <% if property.owners.length > 0 %>
+        <td><%=property.owners[0].name%></td>
+      <%else%>
+        <td>Unknown</td>
+      <% end %>
       <td><%= property.acres %></td>
       <td><%= property.GIS_acres %></td>
       <td><%= property.build_acres %></td>
@@ -48,4 +52,9 @@
     <%= link_to "CSV", properties_path(format: "csv") %> |
     <%= link_to "Excel", properties_path(format: "xls") %>
   </p>
+  <p> Import </p>
+  <%= form_tag import_properties_path, multipart:true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "import" %>
+  <% end %>
 

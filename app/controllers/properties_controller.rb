@@ -13,7 +13,11 @@ class PropertiesController < ApplicationController
       format.csv {send_data text: @properties.to_csv}
       format.xls {send_data text: @properties.to_csv(col_sep:"\t")}
     end
+  end
 
+  def import
+    Property.import(params[:file])
+    redirect_to properties_path, notice:"Properties Updated"
   end
 
   def show
