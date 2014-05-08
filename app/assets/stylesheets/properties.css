@@ -10,7 +10,7 @@ th, td { width: 150px; }
     height: 400px;
   }
 
-#test{
+#search-display{
   height: 300px;
   overflow: auto;
 }
