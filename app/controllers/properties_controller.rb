@@ -4,6 +4,14 @@ class PropertiesController < ApplicationController
     @search = Property.search(params[:q])
     @properties = @search.result
     @search.build_condition
+
+    # action to allow csv download
+    respond_to do |format|
+      format.html
+      format.csv {send_data text: @properties.to_csv}
+      format.xls {send_data text: @properties.to_csv(col_sep:"\t")}
+    end
+
   end
 
   def show

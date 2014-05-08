@@ -14,7 +14,12 @@
   <% end %>
   <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-primary'%></div>
 <% end %>
-<div id="test">
+<div id="search-display">
+  <p>
+    Download:
+    <%= link_to "CSV", properties_path(format: "csv") %> |
+    <%= link_to "Excel", properties_path(format: "xls") %>
+  </p>
   <table class="table prop-table">
     <tr>
       <th><%= sort_link @search, :apn ,"APN"%></th>
