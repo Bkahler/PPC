@@ -1,14 +1,9 @@
 table { table-layout: fixed; }
 th, td { width: 150px; }
 
-.owned{
-  background: grey;
-  padding: 5px 10px 25px 20px;
-}
+.owned{ background: grey; padding: 5px 10px 25px 20px;}
 
-#map{
-    height: 400px;
-  }
+#map{ height: 400px; }
 
 #search-display{
   height: 300px;
@@ -21,14 +16,6 @@ th, td { width: 150px; }
 
 .owner-search{
   margin-bottom: 40px;
-}
-
-#q_c_0_p{
-  height:33px;
-}
-
-#q_c_0_a_0_name{
-  height: 33px;
 }
 
 div.actions.form-control{
@@ -46,3 +33,6 @@ div.actions.form-control{
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
+.edit-property-form{
+  margin-bottom: 40px;
+}
