@@ -14,11 +14,6 @@
   <div class="actions form-control"><%= f.submit "Search", :class=>'btn btn-primary'%></div>
 <% end %>
 <div id='search-display'>
-  <p>
-    Download:
-    <%= link_to "CSV", owners_path(format: "csv") %> |
-    <%= link_to "Excel", owners_path(format: "xls") %>
-  </p>
   <table class="table owner-table">
     <tr>
       <th><%= sort_link @search, :name ,"Name"%></th>
@@ -48,4 +43,12 @@
     </tr>
     <% end %>
   </table>
+
 </div>
+<br>
+<br>
+  <p>
+    Download:
+    <%= link_to "CSV", owners_path(format: "csv") %> |
+    <%= link_to "Excel", owners_path(format: "xls") %>
+  </p>
