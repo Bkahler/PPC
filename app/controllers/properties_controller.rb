@@ -3,6 +3,8 @@ class PropertiesController < ApplicationController
   def index
     @search = Property.search(params[:q])
     @properties = @search.result
+
+    # ransack search object
     @search.build_condition
 
     # action to allow csv download

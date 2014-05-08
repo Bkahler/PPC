@@ -15,8 +15,6 @@ class Property < ActiveRecord::Base
       all.each do |property|
         csv << property.attributes.values_at(*column_names)
       end
-
-
     end
   end
 
