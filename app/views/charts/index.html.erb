@@ -1,0 +1,8 @@
+
+
+<h1>Maps and Charts</h1>
+<%= pie_chart({"Properties Owned" => 10, "Properties In Process" => 5}) %>
+<%= line_chart Property.group_by_day(:created_at).count %>
+<%= column_chart Property.group_by_hour_of_day(:created_at, format: "%l %P").count %>
+<%= bar_chart Property.group(:apn).sum(:acres) %>
+<%= area_chart Property.group(:apn).maximum(:acres) %>

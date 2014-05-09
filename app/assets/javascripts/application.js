@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jsapi
+//= require chartkick
 //= require mapbox.js
 //= require jquery_ujs
 //= require bootstrap

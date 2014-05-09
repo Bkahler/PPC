@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem "therubyracer"
 gem "less-rails"
 gem 'bootstrap-sass', '~> 3.1.1'
+gem "chartkick"
+gem "groupdate"
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
