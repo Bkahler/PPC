@@ -52,9 +52,12 @@
     <%= link_to "CSV", properties_path(format: "csv") %> |
     <%= link_to "Excel", properties_path(format: "xls") %>
   </p>
+
+<% if current_user.email == "bkahler3@gmail.com"%>
   <p> Import </p>
   <%= form_tag import_properties_path, multipart:true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "import" %>
   <% end %>
+<% end %>
 
