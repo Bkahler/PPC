@@ -1,5 +1,5 @@
 <h1> PROPERTY </h1>
-<%= search_form_for @search, :html=>{:class=>'form-inline property-search'} do |f| %>
+<%= search_form_for @property_search, :html=>{:class=>'form-inline property-search'} do |f| %>
   <%= f.condition_fields do |c| %>
     <div class="field form-group">
       <%= c.attribute_fields do |a| %>
@@ -17,14 +17,14 @@
 <div id="search-display">
   <table class="table prop-table">
     <tr>
-      <th><%= sort_link @search, :apn ,"APN"%></th>
-      <th><%= sort_link @search, :owners,"Primary Owner" %></th>
-      <th><%= sort_link @search,:acres,"Acres"%></th>
-      <th><%= sort_link @search,:GIS_acres,"GIS Acres"%></th>
-      <th><%= sort_link @search,:build_Acres,"Build Acres"%></th>
-      <th><%= sort_link @search,:year_sold,"Year Sold"%></th>
-      <th><%= sort_link @search,:sale_price,"Sale Price"%></th>
-      <th><%= sort_link @search,:assesment ,"Assesment"%></th>
+      <th><%= sort_link @property_search, :apn ,"APN"%></th>
+      <th><%= sort_link @property_search, :owners,"Primary Owner" %></th>
+      <th><%= sort_link @property_search,:acres,"Acres"%></th>
+      <th><%= sort_link @property_search,:GIS_acres,"GIS Acres"%></th>
+      <th><%= sort_link @property_search,:build_Acres,"Build Acres"%></th>
+      <th><%= sort_link @property_search,:year_sold,"Year Sold"%></th>
+      <th><%= sort_link @property_search,:sale_price,"Sale Price"%></th>
+      <th><%= sort_link @property_search,:assesment ,"Assesment"%></th>
 
     </tr>
     <% @properties.each do |property| %>
