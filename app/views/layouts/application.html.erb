@@ -24,17 +24,20 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-            <% if session[:search_results_property].include?('.csv') || session[:search_results_property].include?('.xls') %>
-              <li><%=link_to "Properties", properties_path%>
-            <%else%>
-              <li><%=link_to "Properties", session[:search_results_property]%>
-            <%end%>
-
-            <% if session[:search_results_owner].include?('.csv') || session[:search_results_owner].include?('.xls')%>
-              <li><%=link_to "Owners", owners_path%>
-            <%else%>
-              <li><%=link_to "Owners", session[:search_results_owner]%>
-            <%end%>
+        <%if session[:search_results_property]%>
+          <% if session[:search_results_property].include?('.csv') || session[:search_results_property].include?('.xls') %>
+            <li><%=link_to "Properties", properties_path%>
+          <%else%>
+            <li><%=link_to "Properties", session[:search_results_property]%>
+          <%end%>
+        <%end%>
+        <%if session[:search_results_owner]%>
+          <% if session[:search_results_owner].include?('.csv') || session[:search_results_owner].include?('.xls')%>
+            <li><%=link_to "Owners", owners_path%>
+          <%else%>
+            <li><%=link_to "Owners", session[:search_results_owner]%>
+          <%end%>
+        <%end%>
 
             <li><%=link_to "Maps and Charts", charts_path%></li>
       </ul>
@@ -63,9 +66,12 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+
+
   <div class="container">
     <%= yield %>
   </div>
+
 
 </body>
 </html>
