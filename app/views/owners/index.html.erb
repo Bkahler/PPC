@@ -45,6 +45,9 @@
   </table>
 
 </div>
+<% if session[:search_results_owner] != "http://localhost:3000/owners" %>
+ <p> <%= link_to "Reset Search", owners_path %> </p>
+<% end %>
 <br>
 <br>
   <p>
