@@ -24,8 +24,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-            <li><%=link_to "Properties", properties_path%></li>
-            <li><%=link_to "Owners", owners_path%></li>
+            <% if session[:search_results_property].include?('.csv') || session[:search_results_property].include?('.xls') %>
+              <li><%=link_to "Properties", properties_path%>
+            <%else%>
+              <li><%=link_to "Properties", session[:search_results_property]%>
+            <%end%>
+
+            <% if session[:search_results_owner].include?('.csv') || session[:search_results_owner].include?('.xls')%>
+              <li><%=link_to "Owners", owners_path%>
+            <%else%>
+              <li><%=link_to "Owners", session[:search_results_owner]%>
+            <%end%>
+
             <li><%=link_to "Maps and Charts", charts_path%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -46,12 +56,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
-
-
-
 
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>

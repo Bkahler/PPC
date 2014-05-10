@@ -49,6 +49,6 @@
 <br>
   <p>
     Download:
-    <%= link_to "CSV", owners_path(format: "csv") %> |
-    <%= link_to "Excel", owners_path(format: "xls") %>
+    <%= link_to "CSV", owners_path(params.merge(format: "csv")) %> |
+    <%= link_to "Excel", owners_path(params.merge(format: "xls")) %>
   </p>

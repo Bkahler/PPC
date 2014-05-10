@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
   def index
     @property_search = Property.search(params[:q])
     @properties = @property_search.result
+    session[:search_results_property] = request.url
 
     # ransack search object
     @property_search.build_condition
@@ -17,7 +18,6 @@ class PropertiesController < ApplicationController
 
   def import
     Property.import(params[:file])
-    redirect_to properties_path, notice:"Properties Updated"
   end
 
   def show

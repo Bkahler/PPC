@@ -23,6 +23,7 @@ class Property < ActiveRecord::Base
       params = {:apn=>row["apn"],:acres=>row["acres"],:GIS_acres=>row["GIS_acres"],:build_acres=>row["build_acres"],:year_sold=>row["year_sold"],:sale_price=>row["sale_price"],:assesment=>row["assesment"]}
       prop = Property.create! params
       prop.owners << Owner.find_by_id(row["owner_id"])
+
     end
   end
 
