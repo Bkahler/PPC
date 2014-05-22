@@ -5,7 +5,7 @@
       <%= c.attribute_fields do |a| %>
         <%= a.attribute_select({associations: [:owners]},{class: "form-control"})%>
       <% end %>
-      <%= c.predicate_select({only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null]},{class: "form-control"})%>
+      <%= c.predicate_select({only: [:cont,:eq]},{class: "form-control"})%>
 
       <%= c.value_fields do |v| %>
         <%=v.text_field :value, :class=>'form-control' %>
@@ -45,6 +45,9 @@
     <% end %>
   </table>
 </div>
+<% if session[:search_results_property] != "http://localhost:3000/properties" %>
+ <p> <%= link_to "Reset Search", properties_path %> </p>
+<% end %>
 <br>
 <br>
   <p>
