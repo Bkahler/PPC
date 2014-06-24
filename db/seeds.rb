@@ -7,10 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
   Owner.create!(name:"Tom Jones",doc:"link to a pdf",street:"123 Heresville",city:"Oakland",country:"United State",phone:"555-555-5566",alternate_phone:"555-444-5566",email:"tom@jones.com",notes:"Recently called and left a message, but did not hear back")
-  Owner.create!(name:"Bryan Kahler",doc:"link to a pdf",street:"234 Main Street",city:"Los Angeles",country:"United State",phone:"555-222-2266",alternate_phone:"555-555-5599",email:"Bryan@Kahler.com",notes:"I think he was drunk when I called last")
+  Owner.create!(name:"Bryan Kahler",doc:"link to a pdf",street:"234 Main Street",city:"Los Angeles",country:"United State",phone:"555-222-2266",alternate_phone:"555-555-5599",email:"Bryan@Kahler.com",notes:"")
   Owner.create!(name:"Blair Adams",doc:"link to a pdf",street:"567 End Lane",city:"Albany",country:"United State",phone:"555-555-5566",alternate_phone:"555-444-5566",email:"Blair@Adams.com",notes:"Sounded like he was on a boat")
-  Owner.create!(name:"Neil Story",doc:"link to a pdf",street:"889 Mapview Terrace",city:"Walnut Creek",country:"United State",phone:"555-555-5566",alternate_phone:"555-444-5566",email:"Neil@Storey.com",notes:"Said he'd call back after yoga")
-  Owner.create!(name:"Freddrick Kruger",doc:"link to a pdf",street:"1 Elm Street",city:"Oakland",country:"United State",phone:"555-555-5566",alternate_phone:"555-444-5566",email:"cut-em@up.com",notes:"this one is a nut")
+  Owner.create!(name:"Neil Story",doc:"link to a pdf",street:"889 Mapview Terrace",city:"Walnut Creek",country:"United State",phone:"555-555-5566",alternate_phone:"555-444-5566",email:"Neil@Storey.com",notes:"Will call back with more information ")
+  Owner.create!(name:"Freddrick Kruger",doc:"link to a pdf",street:"1 Elm Street",city:"Oakland",country:"United State",phone:"555-555-5566",alternate_phone:"555-444-5566",email:"cut@up.com",notes:"Not interested in sale")
 
   Property.create!(apn:"222333444", acres:45.0, GIS_acres:45.3, build_acres:45.1, year_sold:1988, sale_price:80000,assesment:284000)
   Property.create!(apn:"555666777", acres:48.0, GIS_acres:48.3, build_acres:49.1, year_sold:1999, sale_price:90000,assesment:2384000)
