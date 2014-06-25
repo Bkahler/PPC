@@ -1,5 +1,5 @@
 class AddJsonTypeToShapes < ActiveRecord::Migration
   def change
-    add_column :shapes, :geojson, :column, :json
+    add_column :shapes, :geojson, :json
   end
 end

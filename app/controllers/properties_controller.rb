@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
   def index
     @property_search = Property.search(params[:q])
     @properties = @property_search.result
+    @shapes = Shape.all
     session[:search_results_property] = request.url
 
     # ransack search object
@@ -11,6 +12,7 @@ class PropertiesController < ApplicationController
     # action to allow csv download
     respond_to do |format|
       format.html
+      format.json {render json: @shapes}
       format.csv {send_data text: @properties.to_csv}
       format.xls {send_data text: @properties.to_csv(col_sep:"\t")}
     end

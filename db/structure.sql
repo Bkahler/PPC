@@ -172,7 +172,8 @@ CREATE TABLE shapes (
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
     geometry hstore,
-    coords integer[]
+    coords integer[],
+    geojson json
 );
 
 
@@ -354,3 +355,5 @@ INSERT INTO schema_migrations (version) VALUES ('20140607192402');
 INSERT INTO schema_migrations (version) VALUES ('20140607192923');
 
 INSERT INTO schema_migrations (version) VALUES ('20140621223721');
+
+INSERT INTO schema_migrations (version) VALUES ('20140624204053');
