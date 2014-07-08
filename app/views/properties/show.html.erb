@@ -23,18 +23,4 @@
   <div id='map' class='dark col-md-6'></div>
 
 </div>
-  <script type='text/javascript'>
-    var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.7, -122.4], 1);
-
-    $.get('/properties.json').done(function(data){
-
-      _.each(data,function(item){
-
-          var thing = L.geoJson(item.geojson).addTo(map);
-
-
-      })
-    })
-
-  </script>
 
