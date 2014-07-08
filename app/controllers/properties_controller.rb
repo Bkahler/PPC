@@ -24,6 +24,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    gon.property_id = @property.id
   end
 
   def edit

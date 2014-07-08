@@ -51,6 +51,7 @@ group :development do
 end
 
 gem 'ransack'
+gem 'gon'
 gem 'mapbox-rails'
 
 # Use ActiveModel has_secure_password

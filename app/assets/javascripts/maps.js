@@ -16,7 +16,7 @@ function initialize_map(){
 
     _.each(data,function(item){
 
-      if(item.geojson.properties.STATE_NAME == "Alaska"){
+      if(item.id == gon.property_id){
         var thing = L.geoJson(item.geojson).addTo(map);
       }
 
