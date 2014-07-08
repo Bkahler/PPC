@@ -16,6 +16,6 @@
 //= require mapbox.js
 //= require jquery_ujs
 //= require bootstrap
-//= require turbolinks
 //= require lodash
+//= require jquery-readyselector
 //= require_tree .

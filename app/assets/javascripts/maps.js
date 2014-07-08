@@ -1,10 +1,10 @@
-$(window).load(function(){
+$(".container.properties.show").ready(function(){
   // for isotope call and to allow see all page to appear
   // on pageload check to see if map div is on current page
   // if so initialize map into #map div
-  if($('#map').length > 0){
+  // if($('#map').length > 0){
     initialize_map();
-  }
+  // }
 });
 
 
