@@ -1,10 +1,12 @@
 class PropertiesController < ApplicationController
+  rescue_from Exception, :with => :render_new
 
   def index
     @property_search = Property.search(params[:q])
     @properties = @property_search.result
-    @shapes = Shape.all
-    session[:search_results_property] = request.url
+
+    # Need to find a better way to persist search results
+    # session[:search_results_property] = request.url
 
     # ransack search object
     @property_search.build_condition
@@ -12,7 +14,6 @@ class PropertiesController < ApplicationController
     # action to allow csv download
     respond_to do |format|
       format.html
-      format.json {render json: @shapes}
       format.csv {send_data text: @properties.to_csv}
       format.xls {send_data text: @properties.to_csv(col_sep:"\t")}
     end
@@ -23,8 +24,15 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @shapes = Shape.all
     @property = Property.find(params[:id])
     gon.property_id = @property.id
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @shapes}
+    end
+
   end
 
   def edit
@@ -44,6 +52,11 @@ class PropertiesController < ApplicationController
 private
   def property_params
     params.require(:property).permit(:apn,:owner,:acres,:GIS_acres,:build_acres,:year_sold,:sale_price,:assesment,:text)
+  end
+
+  def render_new
+    flash[:alert] = "Cannot Complete search. please try a different search"
+    redirect_to root_path
   end
 
 end

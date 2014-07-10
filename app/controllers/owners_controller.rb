@@ -3,7 +3,7 @@ class OwnersController < ApplicationController
   def index
     @search = Owner.search(params[:q])
     @owners = @search.result
-    session[:search_results_owner] = request.url
+    # session[:search_results_owner] = request.url
 
     # ransack search object
     @search.build_condition
