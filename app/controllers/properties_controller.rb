@@ -24,14 +24,14 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @shapes = Shape.all
+    @parcels = Shape.all
     @property = Property.find(params[:id])
     gon.property_id = @property.id
 
     # Json response
     respond_to do |format|
       format.html
-      format.json {render json: @shapes}
+      format.json {render json: @parcels}
     end
 
   end
