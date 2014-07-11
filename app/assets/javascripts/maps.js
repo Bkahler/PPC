@@ -42,10 +42,11 @@ $(".container.properties.show").ready(function(){
             });
           }
         });
-        parcelLayer = L.geoJson(parcels);
+        parcelLayer = L.geoJson(parcels, {style: function(feature) { return feature.properties; } });
+
         steeetLayer = L.geoJson(streets);
         parcelLayer.addTo(map);
-        steeetLayer.addTo(map);
+        // steeetLayer.addTo(map);
       });
     }
 
