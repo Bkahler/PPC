@@ -27,7 +27,7 @@ $(".container.properties.show").ready(function(){
       $.get('/properties/'+gon.property_id+'.json').done(function(data){
 
         _.each(data,function(item){
-          if(item.id == 64){
+          if(item.id == 65){
             _.each(item.geojson.features,function(feature){
               if(feature.properties.GEO_ID == gon.property_id){
                 parcels.push(feature);
