@@ -8,10 +8,14 @@ $(".container.properties.show").ready(function(){
   }
 
   $( "#toggleParcels" ).click(function() {
-
     removeParcel();
-
   });
+
+  $( "#toggleSteets" ).click(function() {
+    removeStreets();
+  });
+
+
 
 
   var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.76, -122.5], 15);
@@ -36,9 +40,7 @@ $(".container.properties.show").ready(function(){
               streets.push(feature);
               // }
             });
-
           }
-
         });
         parcelLayer = L.geoJson(parcels);
         steeetLayer = L.geoJson(streets);
@@ -54,6 +56,15 @@ $(".container.properties.show").ready(function(){
       } else {
         map.addLayer(parcelLayer);
         }
+    }
+
+
+    function removeStreets(){
+      if (map.hasLayer(steeetLayer)){
+        map.removeLayer(steeetLayer);
+      } else{
+        map.addLayer(steeetLayer);
+      }
     }
 
 
