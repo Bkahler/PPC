@@ -11,7 +11,7 @@ class PropertiesController < ApplicationController
     # ransack search object
     @property_search.build_condition
 
-    # action to allow csv download
+    # action to allow csv download, xls download
     respond_to do |format|
       format.html
       format.csv {send_data text: @properties.to_csv}
@@ -28,6 +28,7 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
     gon.property_id = @property.id
 
+    # Json response
     respond_to do |format|
       format.html
       format.json {render json: @shapes}

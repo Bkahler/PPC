@@ -10,16 +10,20 @@ $(".container.properties.show").ready(function(){
 
 function initialize_map(){
 
-  var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.7, -122.4], 1);
+  var map = L.mapbox.map('map', 'examples.map-y7l23tes').setView([37.76, -122.5], 15);
+  var parcels = []
 
   $.get('/properties/'+gon.property_id+'.json').done(function(data){
 
     _.each(data,function(item){
-
-      if(item.id == gon.property_id){
-        var thing = L.geoJson(item.geojson).addTo(map);
-      }
+      _.each(item.geojson.features,function(feature){
+        if(feature.properties.GEO_ID == gon.property_id){
+          parcels.push(feature);
+        };
+      })
 
     });
+    L.geoJson(parcels).addTo(map);
+
   });
 }

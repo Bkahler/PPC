@@ -66,12 +66,14 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<div id="flash">
   <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <p class="alert alert-success" id="flash_notice'"><%= notice %></p>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <p class="alert alert-danger" id="alert_notice"><%= alert %></p>
   <% end %>
+</div>
 
 
   <div class="container <%= controller_name %> <%= action_name %>">
@@ -81,3 +83,11 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      setTimeout(function(){
+        $('#flash').remove();
+      }, 2000);
+   })
+</script>
