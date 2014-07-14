@@ -129,7 +129,8 @@ CREATE TABLE properties (
     sale_price double precision,
     assesment double precision,
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    status integer
 );
 
 
@@ -167,13 +168,11 @@ CREATE TABLE schema_migrations (
 
 CREATE TABLE shapes (
     id integer NOT NULL,
-    feature_type hstore,
-    properties hstore,
+    feature_type character varying(255),
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    geometry hstore,
-    coords integer[],
-    geojson json
+    geojson json,
+    property_id integer
 );
 
 
@@ -357,3 +356,9 @@ INSERT INTO schema_migrations (version) VALUES ('20140607192923');
 INSERT INTO schema_migrations (version) VALUES ('20140621223721');
 
 INSERT INTO schema_migrations (version) VALUES ('20140624204053');
+
+INSERT INTO schema_migrations (version) VALUES ('20140711222120');
+
+INSERT INTO schema_migrations (version) VALUES ('20140714030643');
+
+INSERT INTO schema_migrations (version) VALUES ('20140714031505');
