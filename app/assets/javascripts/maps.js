@@ -26,12 +26,10 @@ $(".container.properties.show").ready(function(){
     function initialize_map(){
       $.get('/properties/'+gon.property_id+'.json').done(function(data){
 
-        _.each(data.parcels,function(item){
-          parcels.push(item.geojson);
-        });
+        parcels.push(data.parcels.geojson);
+        debugger
 
         _.each(data.streets,function(item){
-
           streets.push(item.geojson);
         });
 

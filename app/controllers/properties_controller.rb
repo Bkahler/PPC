@@ -25,7 +25,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
-    @parcel = @property.shapes
+    @parcel = @property.shape
     @streets = Shape.where(feature_type:"Street")
 
 
@@ -47,23 +47,20 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
-    parcels = @property.shapes
+    parcels = @property.shape
 
 
-    # if property_params["status"].to_i == 1
-    #   color = "#F00"
-    # elsif property_params["status"].to_i == 2
-    #   color = "#00F"
-    # end
+    if property_params["status"].to_i == 1
+      color = "#F00"
+    elsif property_params["status"].to_i == 2
+      color = "#00F"
+    end
 
-    # parcels.each do |p|
-    #   geojson = p.geojson
-    #   geojson["properties"]["fillColor"] = color
-    #   p.update_attributes(geojson: geojson)
+    geojson = parcels.geojson
+    geojson["properties"]["fillColor"] = color
 
-    # end
+    parcels.update_attributes(geojson: geojson)
 
-    # @property.shapes = parcels
 
     if @property.update(property_params)
       redirect_to @property
