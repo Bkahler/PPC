@@ -24,14 +24,18 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @parcels = Shape.all
     @property = Property.find(params[:id])
+    @parcel = @property.shapes
+    @shapes = Shape.where('feature_type not in (?)',"Parcel")
+
+    @geojson = {parcels: @parcel, other:@shapes}
+
     gon.property_id = @property.id
 
     # Json response
     respond_to do |format|
       format.html
-      format.json {render json: @parcels}
+      format.json {render json: @geojson}
     end
 
   end
