@@ -1,6 +1,6 @@
 class Shape < ActiveRecord::Base
 
-  attr_accessible :geojson,:feature_type
+  attr_accessible :geojson,:feature_type,:property_id
   belongs_to :property
 
   def updatecolor(shape_id,color)

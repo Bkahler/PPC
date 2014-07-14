@@ -48,28 +48,20 @@ class PropertiesController < ApplicationController
   def update
     @property = Property.find(params[:id])
 
-
-
-    # geojson =  @property.shape.geojson
-
     if @property.update(property_params)
-    #   if property_params["status"].to_i == 1
-    #    color = "#F00"
-    #   elsif property_params["status"].to_i == 2
-    #    color = "#00F"
-    #   end
 
-    #   geojson["properties"]["color"] = color
+      if property_params["status"].to_i == 1
+       color = "#F00"
+      elsif property_params["status"].to_i == 2
+       color = "#00F"
+      end
 
-
-      @property.shape.updatecolor(@property.shape.id,"#00f")
-
+      @property.shape.updatecolor(@property.shape.id,color) #updates geojson shape color based on property status
 
       redirect_to @property
     else
       render 'edit'
     end
-
   end
 
 private
