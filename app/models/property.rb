@@ -2,8 +2,8 @@ class Property < ActiveRecord::Base
 
   has_many :owner_properties
   has_many :owners, through: :owner_properties
-  has_one :shapes
-  accepts_nested_attributes_for :shapes
+  has_one :shape
+  accepts_nested_attributes_for :shape
 
   UNRANSACKABLE_ATTRIBUTES = ["id", "published", "created_at"]
 
