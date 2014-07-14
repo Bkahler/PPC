@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  rescue_from Exception, :with => :render_new
+  # rescue_from Exception, :with => :render_new
 
   def index
     @property_search = Property.search(params[:q])
@@ -26,10 +26,10 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     @parcel = @property.shapes
-    @shapes = Shape.where.not(feature_type:"Parcel")
+    @streets = Shape.where(feature_type:"Street")
 
 
-    @geojson = {parcels: @parcel, other:@shapes}
+    @geojson = {parcels: @parcel, streets:@streets}
 
     gon.property_id = @property.id
 
@@ -47,6 +47,23 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
+    parcels = @property.shapes
+
+
+    # if property_params["status"].to_i == 1
+    #   color = "#F00"
+    # elsif property_params["status"].to_i == 2
+    #   color = "#00F"
+    # end
+
+    # parcels.each do |p|
+    #   geojson = p.geojson
+    #   geojson["properties"]["fillColor"] = color
+    #   p.update_attributes(geojson: geojson)
+
+    # end
+
+    # @property.shapes = parcels
 
     if @property.update(property_params)
       redirect_to @property
@@ -57,7 +74,7 @@ class PropertiesController < ApplicationController
 
 private
   def property_params
-    params.require(:property).permit(:apn,:owner,:acres,:GIS_acres,:build_acres,:year_sold,:sale_price,:assesment,:text)
+    params.require(:property).permit(:apn,:owner,:acres,:GIS_acres,:build_acres,:year_sold,:sale_price,:assesment,:status)
   end
 
   def render_new

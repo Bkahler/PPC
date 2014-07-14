@@ -30,7 +30,7 @@ $(".container.properties.show").ready(function(){
           parcels.push(item.geojson);
         });
 
-        _.each(data.other,function(item){
+        _.each(data.streets,function(item){
 
           streets.push(item.geojson);
         });

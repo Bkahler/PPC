@@ -18,6 +18,8 @@
     <%= f.text_field :sale_price ,:class=>'form-control'%> <br />
     <%= f.label :assesment,"Assesment" %>:
     <%= f.text_field :assesment,:class=>'form-control' %> <br />
+    <%= f.label :status,"Status" %>:
+    <%= f.select :status,[1,2,3],{},{:class=>'form-control'} %> <br />
     <%= f.submit "Update",:class=>'form-control btn-danger'%>
 
   <% end %>
