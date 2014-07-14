@@ -26,31 +26,22 @@ $(".container.properties.show").ready(function(){
     function initialize_map(){
       $.get('/properties/'+gon.property_id+'.json').done(function(data){
 
-        debugger
-
         _.each(data.parcels,function(item){
-          if(item.id == 65){
-            _.each(item.geojson.features,function(feature){
-              if(feature.properties.GEO_ID == gon.property_id){
-                parcels.push(feature);
-              }
-            });
-          }
-          else if (item.id ==60){
-            _.each(item.geojson.features,function(feature){
-              // if(feature.properties.GEO_ID == gon.property_id){
-              streets.push(feature);
-              // }
-            });
-          }
+          parcels.push(item.geojson);
         });
+
+        _.each(data.other,function(item){
+
+          streets.push(item.geojson);
+        });
+
         parcelLayer = L.geoJson(parcels, {style: function(feature) { return feature.properties; } });
 
         steeetLayer = L.geoJson(streets);
         parcelLayer.addTo(map);
-        // steeetLayer.addTo(map);
-      });
-    }
+
+      }); //end of ajax call
+    } //end of initialize_map
 
 
     function removeParcel(){

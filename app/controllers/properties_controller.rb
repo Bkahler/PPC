@@ -26,7 +26,8 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     @parcel = @property.shapes
-    @shapes = Shape.where('feature_type not in (?)',"Parcel")
+    @shapes = Shape.where.not(feature_type:"Parcel")
+
 
     @geojson = {parcels: @parcel, other:@shapes}
 
