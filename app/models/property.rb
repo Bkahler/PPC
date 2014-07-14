@@ -2,8 +2,10 @@ class Property < ActiveRecord::Base
 
   has_many :owner_properties
   has_many :owners, through: :owner_properties
-  has_one :shape
-  accepts_nested_attributes_for :shape
+  has_one :shape, autosave: true
+
+  attr_accessible :apn,:owner,:acres, :GIS_acres,:build_acres,:year_sold,:sale_price,:assesment,:status
+
 
   UNRANSACKABLE_ATTRIBUTES = ["id", "published", "created_at"]
 

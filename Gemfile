@@ -21,6 +21,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem "chartkick"
 gem "groupdate"
 gem 'lodash-rails'
+gem 'protected_attributes'
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

@@ -10,6 +10,7 @@ PPC::Application.routes.draw do
   resources :owners
   resources :owner_properties
   resources :charts
+  resources :shapes
 
 end
 
