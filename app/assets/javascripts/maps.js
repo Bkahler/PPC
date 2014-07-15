@@ -35,11 +35,11 @@ $(".container.properties.show").ready(function(){
 
         parcelLayer = L.geoJson(parcels,
           {style: function(feature) {return feature.properties;},
-           onEachFeature:ohi
+           onEachFeature:panMapToParcel
           });
         parcelLayer.bindPopup(text.toString());
 
-        steetLayer = L.geoJson(streets);
+        streetLayer = L.geoJson(streets);
         map.addLayer(parcelLayer);
 
       }); //end of ajax call
@@ -57,10 +57,10 @@ $(".container.properties.show").ready(function(){
 
 
     function removeStreets(){
-      if (map.hasLayer(steetLayer)){
-        map.removeLayer(steetLayer);
+      if (map.hasLayer(streetLayer)){
+        map.removeLayer(streetLayer);
       } else{
-        map.addLayer(steetLayer);
+        map.addLayer(streetLayer);
       }
     }
 
