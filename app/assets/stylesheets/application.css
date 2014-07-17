@@ -15,6 +15,69 @@
 */
 @import "bootstrap";
 
+.footer{
+  background-color: black;
+  color: #999999;
+  text-align: right;
+}
+
+div.container.sessions.new {
+  background-image: url("silverMine.jpg");
+  background-repeat: repeat-x;
+  background-position: right 0px top -200px;
+  background-size: 100%;
+  margin: 0px;
+  width: 100%;
+  height: 400px;
+  margin-top: -20px;
+}
+
+div.sign-in-form{
+ border-radius: 4px;
+ width: 50%;
+ margin-top: 60px;
+ margin-right: auto;
+ margin-left: auto;
+ padding-top: 10px;
+ padding-bottom: 44px;
+ padding-right: 40px;
+ padding-left: 40px;
+ background-color: rgba(255, 255, 255, 0.65);
+}
+
+input#user_email {
+ width: 250px;
+}
+input#user_password {
+ width: 250px;
+}
+
+
+#feature-section-container{
+  margin-top: 40px;
+  margin-bottom: 200px;
+}
+
+
+.feature-section{
+  text-align: center;
+}
+
+#sign-in-btn-div{
+  padding-top: 25px;
+}
+#sign-in-btn{
+  background-color:#e74c3c;
+  color:white;
+  font-size: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.reds{
+  border: 1px solid red;
+}
+
 
 
 

@@ -3,8 +3,8 @@
 <head>
   <title>PPC Land Acquisition</title>
   <%= include_gon %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all"%>
+  <%= javascript_include_tag "application"%>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -78,6 +78,35 @@
 
   <div class="container <%= controller_name %> <%= action_name %>">
     <%= yield %>
+  </div>
+  <% if controller_name == 'sessions' && action_name == 'new' %>
+    <div class = "container" id = "feature-section-container">
+      <div class = "col-md-3 feature-section">
+        <%= image_tag("34.png", :alt => "globe") %>
+        <h3>Maps</h3>
+        <p>View property location and status in the context of rich interactive maps.</p>
+      </div>
+      <div class = "col-md-3 feature-section">
+        <%= image_tag("433.png", :alt => "charts") %>
+        <h3>Charts and Graphs</h3>
+        <p>Visualize project and property details and attributes on dynamic, full color charts and graphs.</p>
+      </div>
+      <div class = "col-md-3 feature-section">
+       <%= image_tag("230.png", :alt => "notes") %>
+       <h3>Update Attributes</h3>
+       <p>Update property details and see results instantly across entire organization.</p>
+      </div>
+      <div class = "col-md-3 feature-section">
+       <%= image_tag("180.png", :alt => "search") %>
+       <h3>Search Database</h3>
+       <p>Search entire database of propety and owner entries by various attributes and retreive details instantly.</p>
+      </div>
+    </div>
+  <%end%>
+  <div class="footer">
+    <div class="container">
+      <p > © PPC Land Consultants 2014</p>
+    </div>
   </div>
 
 
