@@ -79,6 +79,7 @@
   <div class="container <%= controller_name %> <%= action_name %>">
     <%= yield %>
   </div>
+
   <% if controller_name == 'sessions' && action_name == 'new' %>
     <div class = "container" id = "feature-section-container">
       <div class = "col-md-3 feature-section">
@@ -102,13 +103,14 @@
        <p>Search entire database of propety and owner entries by various attributes and retreive details instantly.</p>
       </div>
     </div>
-  <%end%>
-  <div class="footer">
-    <div class="container">
-      <p > © PPC Land Consultants 2014</p>
-    </div>
-  </div>
 
+    <div class="footer">
+      <div class="container">
+        <p > © PPC Land Consultants 2014</p>
+      </div>
+    </div>
+
+  <%end%>
 
 </body>
 </html>
