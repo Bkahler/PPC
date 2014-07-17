@@ -6,7 +6,7 @@ class PropertiesController < ApplicationController
     @properties = @property_search.result
 
     # Need to find a better way to persist search results
-    # session[:search_results_property] = request.url
+    session[:search_results_property] = request.url
 
     # ransack search object
     @property_search.build_condition
