@@ -29,7 +29,6 @@
 
     </tr>
     <% @owners.each do |owner| %>
-    <%binding.pry%>
     <tr>
       <td><%= link_to owner.name , owner_path(owner.id)%></td>
       <td><%= owner.doc %></td>
