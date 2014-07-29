@@ -25,3 +25,14 @@
   OwnerProperty.create!(property_id:5,owner_id:1)
 
 
+  parcels = ActiveSupport::JSON.decode(File.read('db/parcels.geojson'))
+  parcels['features'].each do |f|
+    Shape.create(feature_type:"Parcel",geojson:f, property_id:f['properties']["Prop_id"].to_i)
+  end
+
+  streets = ActiveSupport::JSON.decode(File.read('db/streets.geojson'))
+  streets['features'].each do |s|
+   Shape.create(feature_type:"Street",geojson:s)
+  end
+
+
