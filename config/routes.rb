@@ -1,7 +1,7 @@
 PPC::Application.routes.draw do
 
   devise_for :users
-  root to: "properties#index"
+  root to: "charts#index"
 
   resources :properties do
     collection { post :import }
